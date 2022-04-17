@@ -10,7 +10,7 @@ class Play extends Phaser.Scene {
     }
     create() {
         this.starfield = this.add.tileSprite(0,0,640,480, 'starfield').setOrigin(0,0);
-        this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0x00FF00).setOrigin(0,0);
+        this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0xC8CAFF).setOrigin(0,0);
         this.add.rectangle(0, 0, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0,0);
         this.add.rectangle(0, game.config.height - borderUISize, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0,0);
         this.add.rectangle(0, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0,0);
@@ -32,8 +32,8 @@ class Play extends Phaser.Scene {
         let scoreConfig = {
             fontFamiy: 'Courier',
             fontSize: '28px',
-            backgroundColor: '#61B1E6',
-            color: '#044A79',
+            backgroundColor: '#8D92FC',
+            color: '#3E418D',
             align: 'right',
             padding : {
                 top: 5,
