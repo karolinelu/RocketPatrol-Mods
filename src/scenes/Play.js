@@ -6,7 +6,7 @@ class Play extends Phaser.Scene {
         this.load.image('rocket', './assets/PlayerRocket.png');
         this.load.image('spaceship', './assets/purpspaceship.png');
         this.load.image('starfield', './assets/background.png');
-        this.load.image('smallrocket', './assets/Rocket4.png');
+        this.load.image('specialship', './assets/Rocket4.png');
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight:32, startFrame:0, endFrame: 9});
         this.load.spritesheet('explosion2', './assets/explosion2.png', {frameWidth: 64, frameHeight:32, startFrame:0, endFrame: 9});
         this.load.spritesheet('explosion3', './assets/explosion3.png', {frameWidth: 64, frameHeight:32, startFrame:0, endFrame: 9});
@@ -20,10 +20,9 @@ class Play extends Phaser.Scene {
         this.add.rectangle(0, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0,0);
         this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0,0);
         this.p1Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'rocket').setOrigin(0.5, 0);
-        this.ship01 = new Spaceship(this, game.config.width + borderUISize*6, borderUISize*4, 'spaceship', 0, 30).setOrigin(0, 0);
-        this.ship02 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2, 'spaceship', 0, 20).setOrigin(0,0);
-        this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4, 'spaceship', 0, 10).setOrigin(0,0);
-        this.ship04 = new Spaceship(this, game.config.width, borderUISize*3 - borderPadding*5, 'smallrocket', 0, 5).setOrigin(0,0);
+        this.ship01 = new Spaceship(this, game.config.width + borderUISize*6, borderUISize*4, 'spaceship', 0, 30, false).setOrigin(0, 0);
+        this.ship02 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2, 'spaceship', 0, 20, false).setOrigin(0,0);
+        this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4, 'specialship', 0, 10, true).setOrigin(0,0);
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
