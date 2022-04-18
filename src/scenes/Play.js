@@ -8,6 +8,9 @@ class Play extends Phaser.Scene {
         this.load.image('starfield', './assets/background.png');
         this.load.image('smallrocket', './assets/Rocket4.png');
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight:32, startFrame:0, endFrame: 9});
+        this.load.spritesheet('explosion2', './assets/explosion2.png', {frameWidth: 64, frameHeight:32, startFrame:0, endFrame: 9});
+        this.load.spritesheet('explosion3', './assets/explosion3.png', {frameWidth: 64, frameHeight:32, startFrame:0, endFrame: 9});
+        this.load.spritesheet('explosion4', './assets/explosion4.png', {frameWidth: 64, frameHeight:32, startFrame:0, endFrame: 9});
     }
     create() {
         this.starfield = this.add.tileSprite(0,0,640,480, 'starfield').setOrigin(0,0);
@@ -94,7 +97,14 @@ class Play extends Phaser.Scene {
     shipExplode(ship) {
         ship.alpha = 0;
         let boom = this.add.sprite(ship.x, ship.y, 'explosion').setOrigin(0,0);
-        boom.anims.play('explode');
+        function random(mn, mx) {
+            return Math.round(Math.random() * (mx - mn) + mn);
+        };
+
+        //picking a random explosion, got help from Victoria Billings
+        var explosion_array = ['explosion', 'explosion2', 'explosion3', 'explosion4'];
+        var pick_explosion = random(0,3);
+        boom.anims.play(explosion_array[pick_explosion]);
         boom.on('animationcomplete', () => {
             ship.reset();
             ship.alpha = 1;
