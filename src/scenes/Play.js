@@ -33,6 +33,21 @@ class Play extends Phaser.Scene {
             frames: this.anims.generateFrameNumbers('explosion', {start:0, end:9, first:0}),
             frameRate: 30
         });
+        this.anims.create({
+            key: 'explode2',
+            frames: this.anims.generateFrameNumbers('explosion2', {start:0, end:9, first:0}),
+            frameRate: 30
+        });
+        this.anims.create({
+            key: 'explode3',
+            frames: this.anims.generateFrameNumbers('explosion3', {start:0, end:9, first:0}),
+            frameRate: 30
+        });
+        this.anims.create({
+            key: 'explode4',
+            frames: this.anims.generateFrameNumbers('explosion4', {start:0, end:9, first:0}),
+            frameRate: 30
+        });
         this.p1Score = 0;
         let scoreConfig = {
             fontFamiy: 'Courier',
@@ -102,7 +117,7 @@ class Play extends Phaser.Scene {
         };
 
         //picking a random explosion, got help from Victoria Billings
-        var explosion_array = ['explosion', 'explosion2', 'explosion3', 'explosion4'];
+        var explosion_array = ['explode', 'explode2', 'explode3', 'explode4'];
         var pick_explosion = random(0,3);
         boom.anims.play(explosion_array[pick_explosion]);
         boom.on('animationcomplete', () => {
