@@ -6,7 +6,7 @@ class Spaceship extends Phaser.GameObjects.Sprite {
         this.moveSpeed = game.settings.spaceshipSpeed;
         this.specialship = specialship;
     }
-
+    //William Morales helped with the special ship
     update() {
         if (this.specialship) {
             this.x -= this.moveSpeed *2;
